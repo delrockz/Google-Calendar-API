@@ -17,8 +17,9 @@ const url = "https://accounts.google.com/o/oauth2/v2/auth";
 const gscope = "https://www.googleapis.com/auth/calendar.events.readonly";
 const clientid = process.env.CLIENT_ID;
 const clientsecret = process.env.CLIENT_SECRET;
-//const redirecturi = "http://localhost:5000/gcapi";
-const redirecturi = "https://calendar-api-7851d.web.app/gcapi";
+//development const redirecturi = "http://localhost:5000/gcapi";
+//firebase const redirecturi = "https://calendar-api-7851d.web.app/gcapi";
+const redirecturi = "https://googleevents.herokuapp.com/gcapi"
 const state = "delrockz";
 
 app.use("/", router);
