@@ -1,4 +1,3 @@
-//remove cors extension
 const { env } = require('process');
 require('dotenv').config();
 const express=require('express');
@@ -17,11 +16,11 @@ const url = "https://accounts.google.com/o/oauth2/v2/auth";
 const gscope = "https://www.googleapis.com/auth/calendar.events.readonly";
 const clientid = process.env.CLIENT_ID;
 const clientsecret = process.env.CLIENT_SECRET;
-//development const redirecturi = "http://localhost:5000/gcapi";
+//dev const redirecturi = "http://localhost:5000/gcapi";
 //firebase const redirecturi = "https://calendar-api-7851d.web.app/gcapi";
 const redirecturi = "https://googleevents.herokuapp.com/gcapi"
 const state = "delrockz";
-
+ 
 app.use("/", router);
 app.use(express.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname,'build')));
@@ -54,6 +53,7 @@ router.get('/gcapi', async (req,res)=>{
                     let count=1;
                     const countArray=[];
                     const uniqueList=[];
+                    eventList.sort();
                     for(var i in eventList){
                         if(uniqueList.includes(eventList[i])){
                                 count=count+1
