@@ -84,5 +84,5 @@ router.route("/fetchEvents").get(async(req, res)=>{
     res.json(result);
   });
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 3000;
 app.listen(port);
