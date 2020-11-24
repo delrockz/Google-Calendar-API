@@ -20,7 +20,7 @@ const clientsecret = process.env.CLIENT_SECRET;
 //firebase const redirecturi = "https://calendar-api-7851d.web.app/gcapi";
 const redirecturi = "https://googleevents.herokuapp.com/gcapi"
 const state = "delrockz";
- 
+
 app.use("/", router);
 app.use(express.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname,'build')));
